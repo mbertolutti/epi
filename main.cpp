@@ -1,6 +1,8 @@
+//
+
 #include <fmt/core.h>
 
 int main()
 {
-    fmt::print("hi epi\n\n");
+    fmt::print("{}{}{}", "hi ", "epi", "\n\n");
 }
