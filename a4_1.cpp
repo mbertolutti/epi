@@ -2,7 +2,6 @@
 
 #include <fmt/core.h>
 #include <cassert>
-#include <climits>
 
 int parity(int number)
 {
@@ -18,8 +17,6 @@ int parity(int number)
 int main()
 {
     int number = 1010101001;
-
-    assert(number <= INT_MAX);
 
     fmt::print("parity of {} is {}\n\n", number, parity(number), "\n\n");
 }
