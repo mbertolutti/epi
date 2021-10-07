@@ -7,7 +7,7 @@
 std::vector<int> inc_dec_array_val(std::vector<int> vec)
 {
     int carry = 1;
-    for (std::vector<int>::reverse_iterator rit = vec.rbegin(); rit!=vec.rend(); ++rit)
+    for (std::vector<int>::reverse_iterator rit = vec.rbegin(); rit != vec.rend(); ++rit)
     {
         int cur = *rit + carry;
         if (cur <= 9)
