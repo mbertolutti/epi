@@ -13,7 +13,7 @@ void swap_bits(unsigned long long& bit_array, int x, int y)
 
 void reverse_64_bit_word(unsigned long long& bit_array)
 {
-    for (int i = 0, j = 63; i < 31; ++i, --j)
+    for (int i = 0, j = 63; i <= 31; ++i, --j)
     {
         swap_bits(bit_array, i, j);
     }
