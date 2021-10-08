@@ -6,7 +6,7 @@ void swap_bits(unsigned long long& bit_array, int x, int y)
 {
     if (((bit_array >> x) & 1) != ((bit_array >> y) & 1))
     {
-        long long bit_mask = (1LL << x) | (1LL << y);
+        long long bit_mask = (1ULL << x) | (1ULL << y);
         bit_array ^= bit_mask;
     }
 }
@@ -21,7 +21,7 @@ void reverse_64_bit_word(unsigned long long& bit_array)
 
 int main()
 {
-    unsigned long long bit_array = 71LL;
+    unsigned long long bit_array = 71ULL;
 
     fmt::print(fmt::format("bit_array: {0:b}\n", bit_array));
     reverse_64_bit_word(bit_array);
