@@ -3,7 +3,7 @@
 #include <fmt/core.h>
 #include <cassert>
 
-long swap_bits(long long bits, int x, int y)
+long long swap_bits(long long bits, int x, int y)
 {
     if (((bits >> x) & 1) != ((bits >> y) & 1))
     {
