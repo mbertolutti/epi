@@ -6,8 +6,8 @@
 
 bool isPalindrome(const std::string& s)
 {
-    std::string::const_iterator it = s.begin();
-    std::string::const_iterator rit = s.end() - 1;
+    std::string::const_iterator it = s.cbegin();
+    std::string::const_iterator rit = s.cend() - 1;
 
     for (; it < rit; ++it, --rit)
     {
