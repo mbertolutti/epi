@@ -3,27 +3,34 @@
 #include <fmt/core.h>
 
 #include <string>
+#include <unordered_set>
 
-bool isPalindrome(const std::string& s)
+bool isPalindromicPermutation(const std::string& s)
 {
-    std::string::const_iterator it = s.cbegin();
-    std::string::const_iterator rit = s.cend() - 1;
-
-    for (; it < rit; ++it, --rit)
+    std::unordered_set<char> us;
+    for (const char c : s)
     {
-        if (*it != *rit)
+        if (!us.erase(c))
         {
-            return false;
+            us.insert(c);
         }
     }
-    return true;
+    return us.size() > 1 ? false : true;
 }
 
 int main()
 {
-    const std::string str = "foobaraboof";
-    const std::string str2 = "foobarsaboof";
+    const std::string str1 = "barabooffoo";
+    const std::string str2 = "barsabooffoo";
+    const std::string str3 = "aba";
+    const std::string str4 = "abba";
+    const std::string str5 = "a";
+    const std::string str6 = "ab";
 
-    fmt::print("isPalindrome: {}\n", isPalindrome(str));
-    fmt::print("isPalindrome: {}\n\n", isPalindrome(str2));
+    fmt::print("isPalindromicPermutation: {}\n", isPalindromicPermutation(str1));
+    fmt::print("isPalindromicPermutation: {}\n", isPalindromicPermutation(str2));
+    fmt::print("isPalindromicPermutation: {}\n", isPalindromicPermutation(str3));
+    fmt::print("isPalindromicPermutation: {}\n", isPalindromicPermutation(str4));
+    fmt::print("isPalindromicPermutation: {}\n", isPalindromicPermutation(str5));
+    fmt::print("isPalindromicPermutation: {}\n\n", isPalindromicPermutation(str6));
 }
